@@ -1,0 +1,6 @@
+<h1>Authors#show</h1>
+<p>Find me in app/views/authors/show.html.erb</p>
+<%@authors.each do |author|%>
+	<%= image_tag author.images, height: 250,  width: 250 if author.images.present? %>
+
+	<%end%>

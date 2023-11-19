@@ -1,0 +1,18 @@
+<h2>Publishers</h2>
+<table class="table table-dark table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Publisher Name</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @publishers.each do |publisher| %>
+    <tr>
+      <td><%= publisher.name %></td>
+      <td><%= link_to "Edit", edit_publisher_path(publisher), class:"btn btn-warning btn-sm"%> <%= link_to "Delete", publisher_path(publisher), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-danger btn-sm" %>
+      </td>
+    </tr>
+    <% end %>
+</tbody>
+</table>

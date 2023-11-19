@@ -1,0 +1,21 @@
+<%= form_for author do |f| %>
+<% if @author.errors.any? %>
+<% @author.errors.full_messages.each do |msg| %>
+<div class="alert alert-danger"><%= msg%></div>
+<% end %>
+<% end %>
+<div class="form-group">
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name %>
+</div>
+<div class="form-group">
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name %>
+</div>
+<div class="form-group">
+	<%= f.label :images %>
+	<%= f.file_field :images, class:"form-control" %>
+</div>
+	<%= f.submit class:"btn btn-primary" %>
+	<%= link_to "Cancel", authors_path, class:"btn btn-secondary" %>
+<% end %>

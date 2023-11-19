@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require bootstrap
+ */
+body {
+
+    font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+    color: #666;
+}
+#header {
+    background-color: #333;
+    color: #fff;
+    height: 80px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    height: 60px;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    padding-top
+}
+
+#books_index img {
+    width: 100%;
+    height: auto;
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+
+#books_index {
+    text-align: center;
+}
+
+#books_index h3 {
+    height: 50px;
+}
+
+#books_index .btn {
+    display: block;
+    margin-top: 20px;
+}
+
+#books_show h2 {
+    background: f4f4f4;
+    padding: 10px;
+}
+.books_show-left {
+    float: left;
+    width: 40%;
+}
+
+.books_show-right {
+    float: left;
+    width: 60%;
+    margin-top: 10px;
+}
+
+.books_show .btn {
+    margin: 20px 0 0 100px;
+}
+.images {
+    width: 150px;
+    height: auto;
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+
+.section2 {
+    margin: 10px 0 10px 0;
+}
+
+.section1 {
+    margin: 10px 0 10px 0;
+}
+
+.section3 {
+    margin: 10px 0 10px 0;
+}
+.section4 {
+   margin: 70px 0 10px 0; 
+}
+#admin-function {
+    background-color: darkred;
+    color: whitesmoke;
+    padding: 5px;
+}

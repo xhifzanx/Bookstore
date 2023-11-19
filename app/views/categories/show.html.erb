@@ -1,0 +1,21 @@
+
+<h2><%= @category.name %></h2>
+
+<div class="row">
+	<% @books.each do |book| %>
+	<div class="col-md-4" >
+	<%= link_to book_path(book) do%>
+		<div class="card">
+			<div class="card-body">
+				<p><strong> <%= book.title %></strong>	</p>
+				<%= image_tag book.images, width: 150 if book.images.present? %>
+			</div>
+				<%= link_to "Read more", book_path(book), class:"btn btn-outline-primary" %>
+		</div>
+	</div>
+	<% end %>
+	<% end %>
+</div>
+
+
+

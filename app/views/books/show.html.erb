@@ -1,0 +1,56 @@
+<div class="row">
+		<div class="col-md-4">
+			<div class="section1">
+				<div >
+					<h2><%= @book.title %></h2>
+					<%= image_tag @book.images, height: 400 if @book.images.present? %>
+				</div>	
+			</div>
+		</div>
+		<div class="col-md-4" >
+
+
+
+
+			<div class="section2">
+				<div >
+					<h3>Book info:</h3>
+						<ul>
+							<li><strong>Category: </strong><%= @book.category.name %></li>
+							<li><strong>Author: </strong><%= @book.author.first_name + " "+@book.author.last_name %></li>
+							<li><strong>Publisher: </strong><%= @book.publisher.name %></li>
+							<li><strong>Year: </strong><%= @book.year %></li>
+							<li><strong>ISBN: </strong><%= @book.isbn %></li>
+							<li><strong>Format: </strong><%= @book.format %></li>
+							<li><strong>Pages: </strong><%= @book.pages %></li>
+						</ul>
+							<div><%= link_to "Buy for "+@book.price, @book.buy, class:"btn btn-success", target:"_blank" %>
+							<%= link_to "Back", root_path, class:"btn btn-secondary" %>
+				</div>	
+			</div>
+		</div>
+</div>
+
+
+
+		<div class="col-md-4">
+			<div class="section3">
+				<div>
+					<%= render "shared/side-bar", categories:@categories %>
+				</div>	
+			</div>
+		</div>
+
+
+<% if current_user.present? %>
+
+<% if current_user.id == @book.user_id || current_user.role == 'super_user'%>
+<div class="section4">
+	<hr>
+	<h4>Description</h4>
+	<p><%= @book.description %></p>
+	<h3 id="admin-function">Admin Functions</h3>
+	<%= link_to "Edit", edit_book_path(@book), class:"btn btn-warning" %>  <%= link_to "Delete", book_path(@book), method: :delete, data: {confirm: "Are you sure!"}, class:"btn btn-danger" %>
+</div>
+<% end %>
+<% end %>
